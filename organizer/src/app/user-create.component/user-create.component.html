@@ -1,0 +1,45 @@
+<div class="user-form">
+  <h2>Users</h2>
+  <form [formGroup]="userForm" (ngSubmit)="onSave()">
+    <div class="form-row">
+      <div class="input-group">
+        <label>First Name <span class="required">*</span></label>
+        <input type="text" formControlName="firstName" />
+      </div>
+      <div class="input-group">
+        <label>Last Name <span class="required">*</span></label>
+        <input type="text" formControlName="lastName" />
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="input-group">
+        <label>User E-mail <span class="required">*</span></label>
+        <input type="email" formControlName="email" />
+      </div>
+      <div class="input-group">
+        <label>Role <span class="required">*</span></label>
+        <select formControlName="role">
+          <option value="" disabled selected>Select role</option>
+          <option *ngFor="let role of roles" [value]="role">{{ role }}</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="input-group">
+        <label>Phone Number</label>
+        <input type="text" formControlName="phone" />
+      </div>
+      <div class="input-group">
+        <label>Gender?</label>
+        <input type="text" formControlName="gender" />
+      </div>
+    </div>
+
+    <div class="button-row">
+      <button type="submit" class="btn-save">Save</button>
+      <button type="button" class="btn-cancel" (click)="onCancel()">Cancel</button>
+    </div>
+  </form>
+</div>

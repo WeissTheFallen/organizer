@@ -1,0 +1,142 @@
+.calendar-container {
+  max-width: 420px;
+  margin: auto;
+  background-color: white;
+  color: black;
+  padding: 1rem;
+  border-radius: 8px;
+  font-family: Arial, sans-serif;
+}
+
+.calendar-header {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: #333;
+}
+
+.calendar-weekdays,
+.calendar-weeks {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.weekday {
+  font-weight: 600;
+  text-align: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #ccc;
+  color: #666;
+  user-select: none;
+}
+
+.week {
+  display: contents;
+}
+
+.day {
+  padding: 0.5rem 0;
+  border: 1px solid #eee;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  min-height: 30px;
+}
+
+.day:hover {
+  background-color: #ffe5e5;
+}
+
+.day.today {
+  background-color: #ff3131;
+  color: white;
+  font-weight: bold;
+  border-color: #ff3131;
+}
+
+.day:empty {
+  cursor: default;
+  background-color: #f9f9f9;
+  border: none;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.modal {
+  position: relative;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 340px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.25);
+  font-family: Arial, sans-serif;
+}
+
+.close-btn {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: #ff3131;
+  border: none;
+  color: white;
+  font-size: 1.4rem;
+  font-weight: bold;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 20;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.modal-tabs button {
+  margin-left: 0.5rem;
+  padding: 0.3rem 0.8rem;
+  border: none;
+  background: #eee;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.modal-tabs button.active {
+  background: #ff3131;
+  color: white;
+}
+
+.modal-tabs button:hover:not(.active) {
+  background: #ddd;
+}
+
+button.btn-save {
+  background-color: #ff3131;
+  color: white;
+  font-weight: 600;
+  border: none;
+  padding: 0.6rem 1.8rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button.btn-save:hover {
+  background-color: #d72828;
+}

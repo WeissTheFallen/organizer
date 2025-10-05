@@ -1,0 +1,142 @@
+.case-form-container {
+  margin: 2rem auto;
+  padding: 2rem 2.5rem;
+  background: white;
+  border-radius: 8px;
+  max-width: 720px;
+  color: black;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 0 14px #eee;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.form-row {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 1.4rem;
+  align-items: flex-end;
+}
+
+.form-group {
+  flex: 1 1 0px;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 0.28rem;
+  color: #444;
+}
+
+.styled-input, .styled-select {
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1.5px solid #ccc;
+  font-size: 1rem;
+  background-color: white;
+  transition: border-color 0.3s ease;
+}
+
+.styled-input:focus, .styled-select:focus {
+  border-color: #FF3131;
+}
+
+.textarea-row {
+  align-items: flex-start;
+}
+
+.textarea-group {
+  flex: 4;
+}
+
+.styled-textarea {
+  width: 100%;
+  height: 120px;
+  border-radius: 6px;
+  border: 1.5px solid #ccc;
+  padding: 0.6rem;
+  font-size: 1rem;
+  resize: vertical;
+  transition: border-color 0.3s ease;
+}
+
+.styled-textarea:focus {
+  border-color: #FF3131;
+}
+
+.pdf-group {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 25px;
+}
+
+.pdf-btn {
+  background: #f6f6f6;
+  border: 2px dashed #ff3131;
+  color: #333;
+  border-radius: 9px;
+  font-size: 1rem;
+  padding: 20px 14px;
+  cursor: pointer;
+  min-width: 85px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: background 0.2s;
+}
+.pdf-btn:hover {
+  background: #ffe5e5;
+  border-style: solid;
+}
+
+.pdf-icon {
+  font-size: 2rem;
+}
+
+.center-row {
+  justify-content: center;
+}
+
+.btn-save {
+  background-color: #ff3131;
+  color: white;
+  font-weight: 600;
+  border: none;
+  padding: 0.7rem 2.4rem;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  margin-top: 1.2rem;
+  letter-spacing: 1.5px;
+  box-shadow: 0px 2px 8px #e8c2c2;
+}
+
+.btn-save:hover {
+  background-color: #d72828;
+}
+
+.btn-cancel {
+  background-color: black;
+  color: white;
+  font-weight: 600;
+  border: none;
+  padding: 0.7rem 2.4rem;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  margin-top: 1.2rem;
+  letter-spacing: 1.5px;
+}
+
+.btn-cancel:hover {
+  background-color: #222;
+}

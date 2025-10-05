@@ -1,0 +1,48 @@
+<div class="calendar-container">
+  <div class="calendar-header">
+    <h3>{{ today | date: 'MMMM yyyy' }}</h3>
+  </div>
+  <div class="calendar-weekdays">
+    <div *ngFor="let dayName of daysOfWeek" class="weekday">
+      {{ dayName }}
+    </div>
+  </div>
+  <div class="calendar-weeks">
+    <div *ngFor="let week of weeks" class="week">
+      <div
+        *ngFor="let day of week"
+        (click)="onDayClick(day)"
+        [class.today]="isToday(day)"
+        class="day"
+      >
+        {{ day ? day.getDate() : '' }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-backdrop" *ngIf="showModal">
+  <div class="modal">
+    <button class="close-btn" (click)="closeModal()">×</button>
+    <div class="modal-header">
+      <h4>Schedule for {{ selectedDate | date: 'fullDate' }}</h4>
+      <div class="modal-tabs">
+        <button (click)="goToCreateAppointment()" class="btn-save">New Appointment</button>
+      </div>
+    </div>
+    <div *ngIf="mode === 'view'">
+      <div *ngIf="currentDayAppointments.length > 0; else noAppointments">
+        <ul>
+          <li *ngFor="let appt of currentDayAppointments">
+            Worker: {{ getWorkerName(appt.workerId) }},
+            Location: {{ getLocationName(appt.locationId) }},
+            Time: {{ appt.timeOfDay }}
+          </li>
+        </ul>
+      </div>
+      <ng-template #noAppointments>
+        <p>No appointments scheduled for this day.</p>
+      </ng-template>
+    </div>
+  </div>
+</div>
